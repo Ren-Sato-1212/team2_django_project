@@ -1,0 +1,96 @@
+{% extends 'content_base/content_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      width: 250px;
+      height: 250px;
+    }
+
+    .gallery:hover {
+      border: 2px solid #F7E600;
+    }
+
+    .gallery img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+    }
+
+    .desc {
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+<br>
+<br>
+<div align="center"><h2>내가 다룰 수 있는 도구들</h2></div>
+<br>
+
+<div class="container">
+
+  <div class="gallery">
+    <a target="_blank">
+      <img src="{% static 'django.png' %}" alt="장고 아이콘" id="django">
+    </a>
+    <div class="desc"><h3>django</h3></div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank">
+      <img src="{% static 'HeidiSQL_logo_image.png' %}" alt="SQL이미지">
+    </a>
+    <div class="desc"><h3>HeidiSQL</h3></div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank">
+      <img src="{% static 'java_logo.png' %}" alt="자바 이미지">
+    </a>
+    <div class="desc"><h3>JAVA</h3></div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank">
+      <img src="{% static 'JavaScript_Logo.png' %}" alt="자바스크립트 로고">
+    </a>
+    <div class="desc"><h3>JAVASCRIPT</h3></div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank">
+      <img src="{% static 'Rstudio.png' %}" alt="rsudio">
+    </a>
+    <div class="desc"><h3>R</h3></div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank">
+      <img src="{% static 'python_logo2.png' %}" alt="python">
+    </a>
+    <div class="desc"><h3>python</h3></div>
+  </div>
+
+
+</div>
+</body>
+
+{% endblock content %}

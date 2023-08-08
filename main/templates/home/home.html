@@ -1,0 +1,15 @@
+<div id="home">
+  <section class="hero-section">
+    <div class="card-grid">
+      {% for member in member_list %}
+      <a class="card">
+        <div class="card__background" style="background-image: url('static/img/{{member.photo_path}}/home_photo.jpg');"></div>
+        <div class="card__content">
+          <p class="card__category">{{member.name}}</p>
+          <input type="hidden" id="pk" value="{{member.pk}}">
+        </div>
+      </a>
+      {% endfor %}
+    <div>
+  </section>
+</div>

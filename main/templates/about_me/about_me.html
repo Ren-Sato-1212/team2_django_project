@@ -1,0 +1,51 @@
+{% extends 'content_base/content_base.html' %}
+
+{% load static %}
+
+{% block css_link %}
+<link href="{% static 'css/about_me.css' %}" type="text/css" rel="stylesheet">
+{% endblock css_link %}
+
+{% block title %}
+	About Me
+{% endblock title %}
+
+{% block content %}
+<div id="profile-background">
+	<div id="profile">
+		<table id="profile-table">
+			<tr>
+				<td rowspan="4" id="profile-photo-cell"><img src="{% static 'img/' %}{{member.photo_path}}/profile_photo.jpg" alt="프로필 사진" id="profile-photo"></td>
+				<th>Name</th>
+				<td>{{member.name}}</td>
+			</tr>
+			<tr>
+				<th>Age</th>
+				<td>{{member.age}}</td>
+			</tr>
+			<tr>
+				<th>Career</th>
+				<td>
+					<ol>
+						{% for career in careers %}
+						<li>{{career.career}}</li>
+						{% endfor %}
+					</ol>
+				</td>
+			</tr>
+			<tr>
+				<th>Contact</th>
+				<td>
+					<ol>
+						{% for contact in contacts %}
+						<li>{{contact.category}}</li>
+						{% endfor %}
+					</ol>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<input type="hidden" id="pk" value="{{member.pk}}">
+{% endblock content %}
